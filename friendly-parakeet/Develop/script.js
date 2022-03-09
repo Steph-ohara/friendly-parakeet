@@ -44,6 +44,14 @@ function generatePassword() {
   );
 
   var minimumCount = 0;
+
+  while(confirmUpperCase === false && ConfirmLowerCase === false & confirmSpecial === false && confirmNumbers === false) {
+    alert("You must choose at least one parameter");
+    var confirmNumbers = confirm("Click OK to confirm including numeric characters.");
+    var confirmLowerCase = confirm("Click OK to confirm including lowercase characters.");
+    var confirmUpperCase = confirm("Click OK to confirm including uppercase characters.");
+    var confirmSpecial = confirm("Click OK to confirm including special characters.");
+  }
 }
 
 // Get references to the #generate element
