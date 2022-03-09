@@ -1,21 +1,31 @@
 // Assignment code here
 
-//number variable
 var numbers = ["0","1","2","3","4","5","6","7","8", "9"];
 
-//special characters
-var special = ["!", "%", "&", ",", ".", "*", "-", "?", "/", "<", ">", "~"]
-
-//lowercase
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
-//uppercase
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
+var special = ["!", "%", "&", ",", ".", "*", "-", "?", "/", "<", ">", "~"]
+
+var confirmLength = "";
+var confirmNumbers;
+var confirmUpperCase;
+var ConfirmLowerCase;
+var confirmSpecial;
+
 
 function generatePassword() {
   var passwordLength = window.prompt(
     "How many characters would you like your password to contain?"
   );
+
+  while(confirmLength <=7 || confirmLength >= 129) {
+    alert("Password length must be between 8-128 characters");
+    var confirmLength = (prompt("How many characters would you like your password to contain?"));
+  }
+
+  alert(`Your password will have ${confirmLength} characters`);
 
   var numbers = window.confirm(
     "Click OK to confirm including numeric characters."
