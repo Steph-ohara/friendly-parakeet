@@ -1,23 +1,8 @@
 // Assignment code here
 
-var numbers = ["0","1","2","3","4","5","6","7","8", "9"];
-
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-
-var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-
-var special = ["!", "%", "&", ",", ".", "*", "-", "?", "/", "<", ">", "~"]
-
-var confirmLength = "";
-var confirmNumbers;
-var confirmUpperCase;
-var ConfirmLowerCase;
-var confirmSpecial;
-
-
 function generatePassword() {
   var passwordLength = window.prompt(
-    "How many characters would you like your password to contain?"
+    "How many characters would you like your password to contain? 8-128"
   );
 
   while(confirmLength <=7 || confirmLength >= 129) {
@@ -27,19 +12,23 @@ function generatePassword() {
 
   alert(`Your password will have ${confirmLength} characters`);
 
-  var numbers = window.confirm(
+  var numbers = ("0","1","2","3","4","5","6","7","8","9");
+  window.confirm(
     "Click OK to confirm including numeric characters."
   );
 
-  var lowerCase = window.confirm(
+  var lowerCase = ("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
+  window.confirm(
     "Click OK to confirm including lowercase characters."
   );
 
-  var upperCase = window.confirm(
+  var upperCase = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+  window.confirm(
     "Click OK to confirm including uppercase characters."
   );
 
-  var special = window.confirm(
+  var special = (".","~","?",",","!","%","&","/","-","*");
+  window.confirm(
     "Click OK to confirm including special characters."
   );
 
@@ -81,8 +70,9 @@ function generatePassword() {
   };
 
   return randomPassword;
-
 };
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
