@@ -1,15 +1,37 @@
 // Assignment code here
 
+//number variable
+var numbers = ["0","1","2","3","4","5","6","7","8", "9"];
+
+//special characters
+var special = ["!", "%", "&", ",", ".", "*", "-", "?", "/", "<", ">", "~"]
+
+//lowercase
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
+//uppercase
+var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
 function generatePassword() {
-  var passwordLength = window.prompt("Enter the number of characters needed for your password. Must be more than 8 and less than 128.");
+  var passwordLength = window.prompt(
+    "How many characters would you like your password to contain?"
+  );
 
-  var numbers = window.prompt("Do you want your password to contain numbers?");
+  var numbers = window.confirm(
+    "Click OK to confirm including numeric characters."
+  );
 
-  var lowerCase = window.prompt("Do you want lowercase characters in your password>");
+  var lowerCase = window.confirm(
+    "Click OK to confirm including lowercase characters."
+  );
 
-  var upperCase = window.prompt("Do you want uppercase characters in your password?");
+  var upperCase = window.confirm(
+    "Click OK to confirm including uppercase characters."
+  );
 
-  var special = window.prompt("Do you want special characters in your password?");
+  var special = window.confirm(
+    "Click OK to confirm including special characters."
+  );
 
   var minimumCount = 0;
 }
@@ -23,11 +45,10 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
-  const generateBtn = document.getElementById('generateBtn')
-  generateBtn.addEventListener("click", writePassword);
+document.querySelector("#generate").addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
 
-  writePassword();
+writePassword();
